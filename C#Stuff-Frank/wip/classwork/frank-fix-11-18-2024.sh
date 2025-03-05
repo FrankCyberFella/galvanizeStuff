@@ -1,0 +1,12 @@
+rm -rf Unit-5-OOP-Unit-Testing/Day-1-Unit-Testing/TextFile1.txt
+rm -rf Unit-5-OOP-Unit-Testing/Day-3-File-IO/Day-3-File-IO/silence.output
+rm -rf Unit-6-Front-End-Web-Development/task-manager/styles/style.css
+rm -rf Unit-6a-Front-End-Web-Development/HTML-CSS-Part-1/.gitplaceholder
+rm -rf Unit-6a-Front-End-Web-Development/HTML-CSS-Part-1/index.html
+rm -rf Unit-6a-Front-End-Web-Development/HTML-CSS-Part-1/myStyles.css
+rm -rf Unit-6a-Front-End-Web-Development/HTML-CSS-Part-2/contactInfo.html
+rm -rf Unit-6b-Angular/Day-3-Multi-Page-App-Frank/src/app/student-list-service.service.spec.ts
+rm -rf Unit-6b-Angular/Day-3-Multi-Page-App-Frank/src/app/student-list-service.service.ts
+rm -rf Unit-7-Angular/Day-2-formExample-Frank/package-lock.json
+rm -rf Unit-7-Angular/Day-2-formExample/package-lock.json
+rm -rf Unit-7-Angular/Day-4-Services-API/package-lock.json

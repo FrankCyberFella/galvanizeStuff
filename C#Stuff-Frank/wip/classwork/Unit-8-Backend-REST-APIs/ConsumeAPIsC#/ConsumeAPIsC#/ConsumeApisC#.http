@@ -1,0 +1,6 @@
+@ConsumeApisC__HostAddress = http://localhost:5160
+
+GET {{ConsumeApisC__HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

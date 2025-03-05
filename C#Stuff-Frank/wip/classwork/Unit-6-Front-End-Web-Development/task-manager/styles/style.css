@@ -1,0 +1,20 @@
+body { /* style stuff in teh body of the page */
+    background-image:linear-gradient(to bottom, gray, lightgray);
+}
+div.taskmanager-list { /* .taskmanger-list is OK too */
+    display: inline-block; /* multi-column display */
+    width: 300px;          /* fixed width columns  */
+    background-color: rgb(230, 225, 225); /* set the background color */
+    border-radius: 2px 4px; /* round left and right corners             */
+    vertical-align: top;    /* line up columns at the top */
+
+}
+.card { /* style each card in the list */
+    background-color: rgb(214, 215, 216);  /* set the background color  */
+    margin: 5px;                             /* spacing bewteen the cards */
+    height: 50px;                            /* height of each card       */
+    
+}
+.cards { /* style each item listed in a card */
+    list-style-type: none;                   /* remove the numbering of list item */
+}

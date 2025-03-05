@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Kh9wfPDau1c=",
+  "success": true,
+  "projectFilePath": "/Users/frankfella/C#-NET-Stuff/Base-Testing-Deps/Base-Testing-Deps/Base-Testing-Deps.csproj",
+  "expectedPackageFiles": [
+    "/Users/frankfella/.nuget/packages/mstest.analyzers/3.7.3/mstest.analyzers.3.7.3.nupkg.sha512",
+    "/Users/frankfella/.nuget/packages/mstest.testframework/3.7.3/mstest.testframework.3.7.3.nupkg.sha512"
+  ],
+  "logs": []
+}

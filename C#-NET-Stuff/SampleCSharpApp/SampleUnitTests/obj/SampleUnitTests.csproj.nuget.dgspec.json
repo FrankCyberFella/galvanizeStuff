@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleUnitTests/SampleUnitTests.csproj": {}
+  },
+  "projects": {
+    "/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleUnitTests/SampleUnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleUnitTests/SampleUnitTests.csproj",
+        "projectName": "SampleUnitTests",
+        "projectPath": "/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleUnitTests/SampleUnitTests.csproj",
+        "packagesPath": "/Users/frankfella/.nuget/packages/",
+        "outputPath": "/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleUnitTests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/frankfella/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.136/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

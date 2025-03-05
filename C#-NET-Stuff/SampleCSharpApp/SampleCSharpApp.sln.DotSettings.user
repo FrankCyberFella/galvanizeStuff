@@ -1,0 +1,10 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=233492cc_002D5414_002D498c_002D926a_002Ded4035122104/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Monthly_Interest_Is_Credited_Correctly" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;MSTest::9CE88195-594D-4EDC-BE91-01CA6402627C::net6.0::SavingsAccountTests.Monthly_Interest_Is_Credited_Correctly&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3d7545c2_002D851d_002D45da_002Dbf1a_002D7ced63a27f93/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ExceptionThrownIfAccountIsNotAbleToGenerateUniqueAccountNumber" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleUnitTests" Presentation="&amp;lt;SampleUnitTests&amp;gt;" /&gt;
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>

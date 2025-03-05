@@ -1,0 +1,76 @@
+{
+<<<<<<< HEAD
+  "hash": "326b0e2f",
+  "configHash": "52920620",
+  "lockfileHash": "2a8da430",
+  "browserHash": "a37f5886",
+=======
+  "hash": "750ea161",
+  "configHash": "1b9bcdca",
+  "lockfileHash": "2a8da430",
+  "browserHash": "604dd380",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+<<<<<<< HEAD
+      "fileHash": "a1daca18",
+=======
+      "fileHash": "727f769a",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+<<<<<<< HEAD
+      "fileHash": "45a9bb0e",
+=======
+      "fileHash": "361bc0f1",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+<<<<<<< HEAD
+      "fileHash": "b6d68d50",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "3dc06183",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "0f225d28",
+=======
+      "fileHash": "7ab20e8a",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+<<<<<<< HEAD
+    "chunk-LV6CG2NV": {
+      "file": "chunk-LV6CG2NV.js"
+    },
+    "chunk-JNMCCJRC": {
+      "file": "chunk-JNMCCJRC.js"
+    },
+    "chunk-ADFJBWRY": {
+      "file": "chunk-ADFJBWRY.js"
+=======
+    "chunk-NKRQVUSQ": {
+      "file": "chunk-NKRQVUSQ.js"
+    },
+    "chunk-QT62IOSF": {
+      "file": "chunk-QT62IOSF.js"
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+    }
+  }
+}

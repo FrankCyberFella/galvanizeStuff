@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base-Testing-Deps", "Base-Testing-Deps\Base-Testing-Deps.csproj", "{BD8224BA-EC16-4D9C-917C-01C31A1D50AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD8224BA-EC16-4D9C-917C-01C31A1D50AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8224BA-EC16-4D9C-917C-01C31A1D50AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8224BA-EC16-4D9C-917C-01C31A1D50AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8224BA-EC16-4D9C-917C-01C31A1D50AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

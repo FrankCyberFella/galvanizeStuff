@@ -1,0 +1,79 @@
+{
+<<<<<<< HEAD
+  "hash": "3b0ef5b2",
+  "configHash": "3572c82e",
+  "lockfileHash": "61e73a1d",
+  "browserHash": "19b10bdb",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "1a877b29",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "667dca6f",
+=======
+  "hash": "45d49168",
+  "configHash": "3d75355f",
+  "lockfileHash": "1ccb8e52",
+  "browserHash": "9f9aeddc",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "91b45274",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+<<<<<<< HEAD
+      "fileHash": "27c7cf62",
+=======
+      "fileHash": "1b7c1173",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+<<<<<<< HEAD
+      "fileHash": "dcbc2b04",
+=======
+      "fileHash": "8f562a12",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+<<<<<<< HEAD
+      "fileHash": "ac443b25",
+=======
+      "fileHash": "34c1bfc7",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "b4a05e7c",
+>>>>>>> 7333f86fbb3df27184d708a2c532b35b3b43dfab
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-DSC7OBGJ": {
+      "file": "chunk-DSC7OBGJ.js"
+    },
+    "chunk-OKWZKB73": {
+      "file": "chunk-OKWZKB73.js"
+    },
+    "chunk-WVGQZYRG": {
+      "file": "chunk-WVGQZYRG.js"
+    }
+  }
+}

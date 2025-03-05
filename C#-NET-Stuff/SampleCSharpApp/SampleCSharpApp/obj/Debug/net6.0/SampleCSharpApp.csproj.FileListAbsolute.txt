@@ -1,0 +1,15 @@
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.csproj.AssemblyReference.cache
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.AssemblyInfoInputs.cache
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.AssemblyInfo.cs
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.csproj.CoreCompileInputs.cache
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/bin/Debug/net6.0/SampleCSharpApp
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/bin/Debug/net6.0/SampleCSharpApp.deps.json
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/bin/Debug/net6.0/SampleCSharpApp.runtimeconfig.json
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/bin/Debug/net6.0/SampleCSharpApp.dll
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/bin/Debug/net6.0/ref/SampleCSharpApp.dll
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/bin/Debug/net6.0/SampleCSharpApp.pdb
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.dll
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/ref/SampleCSharpApp.dll
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.pdb
+/Users/frankfella/C#-NET-Stuff/SampleCSharpApp/SampleCSharpApp/obj/Debug/net6.0/SampleCSharpApp.genruntimeconfig.cache

@@ -1,0 +1,5 @@
+
+-----------------------------------------------------------
+Add MSTest V2 Nuget package to folder with .csproj file
+
+dotnet add package MSTest.TestFramework --version 3.7.3

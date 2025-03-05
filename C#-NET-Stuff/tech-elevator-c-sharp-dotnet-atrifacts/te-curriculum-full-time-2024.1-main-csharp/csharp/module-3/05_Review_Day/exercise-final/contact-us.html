@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fred's Frozen Pops</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="contact">
+    <header>
+        <img alt="Fred's Pops!" src="images/blue-pop.png" />
+        <h1>Fred's Frozen Pops</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main id="contact-us">
+        <h2>Contact Us</h2>
+        <form action="/api/contact" method="POST">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="howDidYouHear">How did you hear of us?</label>
+                <select name="howDidYouHear" id="howDidYouHear">
+                    <option value="PopsMonthly">Pops Monthly</option>
+                    <option value="StickOverflow">Stick Overflow</option>
+                </select>
+            </div>
+            <div>
+                <label for="color">What color is your favorite frozen pop?</label>
+                <input type="color" name="color" id="color" value="#00afef">
+            </div>
+            <div>
+                <label for="comments">Please let us know any comments you have:</label>
+                <textarea name="comments" id="comments" cols="60" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </main>
+
+    <footer>&copy; 2022. All rights reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!-- contains infor for browser - not displayed -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Info Form</title> <!-- Words on browser tab -->
+</head>
+<body> <!-- Main content of the web page -->
+    <nav>
+        <a href="index.html">Home Page</a>
+    </nav>
+    <header> <!-- stuff at the top of the page -->
+        <h1>Contact Information Form</h1>
+        <h3>Please enter your contact information</h3>
+    </header>
+
+    <main>   <!-- contains the primary content of the page -->
+         <!-- To collect input from a user we use HTML forms -->
+         <!-- Use a form to collect data and send to an API or a JavaScript program      -->
+         <!-- API stands for Application Programming Interface                           -->
+         <!-- An API is a method on a different computer or in a different process       --> 
+         <!-- Typically data is sent to an API using HTTP POST request                   --> 
+         <!-- An HTTP request is how to ask a server to do something                     --> 
+         <!-- For right now we will use a dummy API for our form since we don't have one -->  
+
+         <!-- method="" type of HTTP request to send to the API Server when submit button is clicked-->
+         <!-- action="" the url of the API to receive the form content                              -->
+         <form method="POST" action="https://6711ae834eca2acdb5f5679b.mockapi.io/DataFromClass">
+            <!-- input components are typically put inside their div                   -->
+            <!--   for ease in spacing and styling                                     -->
+            <!-- the input tag is used to get input from a user                        -->   
+            <!--     type="" - type of input you want from the user                   -->
+            <!--     id=""   - name used to identify the input field in the html       -->   
+            <!--     name="" - name of variable to hold data when sent out of the form -->   
+            <!--               data is sent from the form to a server or JavaScript    --> 
+            <!-- the label tag provides a description for the input field              -->
+            <!--     for="id-of-the-input-field"-->                         
+            <div> <!-- Ask for the person's full name -->
+                <label for="nameField">Enter your full name</label>
+                <input type="text" id="nameField" name="personsName"/>
+            </div>
+            <div> <!-- Ask for the person's city -->
+                <label for="cityField">What city do you call home?</label>
+                <input type="text" id="cityField" name="cityTheyLiveIn"/>
+            </div>
+            <div> <!-- Get their favorite number -->
+                <label id="favNumber">What's your favorite number?</label>
+                <input type="number" id="favNumber" name="favoriteNumber"/>
+            </div>
+            <div> <!-- get their favorite color-->
+                <label id="favColor">What's your favorite color?</label>
+                <input type="color" id="favColor" name="favoriteColor"/>
+            </div>
+            <div> <!-- get their next birth date-->
+                <label id="nextBirthday">When is you next birthday?</label>
+                <input type="date" id="nextBirthday" name="upcomingBirthDay"/>
+            </div>
+            <div> <!-- Define the submit button to submit the form to the API -->
+                <input type="submit"/>
+            </div>
+
+        </form>
+    </main>
+    <footer> <!-- stuff at the bottom of page -->
+
+    </footer>    
+</body>
+</html>

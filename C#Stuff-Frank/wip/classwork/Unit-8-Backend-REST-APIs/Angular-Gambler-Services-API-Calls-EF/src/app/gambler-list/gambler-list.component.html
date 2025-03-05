@@ -1,0 +1,27 @@
+
+<table id="movieInfoTable">
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Birth</th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Date</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let aGambler of gamblerList">
+        <td>{{aGambler.id}}</td>
+        <td>{{aGambler.gambler_name}}</td>
+        <td>{{aGambler.address}}</td>
+        <td>{{aGambler.monthly_salary}}</td>
+        <td>{{aGambler.birth_date}}</td>
+</tr>    
+</table>
+<input type="button" 
+       id="addMovieButton" 
+       value="Add Gambler" 
+       routerLink="/addgambler"/>

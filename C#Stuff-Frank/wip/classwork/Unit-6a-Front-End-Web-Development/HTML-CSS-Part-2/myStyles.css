@@ -1,0 +1,66 @@
+/* This is a comment is CSS */
+/* Define formatting rules for a web page */
+/* general format:  selector {
+                               css rule
+                               css rule
+                             }
+*/
+html { /* style all the elements withing the html tag */
+    font-size: 20px;
+    color: blue;
+}
+h2 { /* style all h2 elements */
+ color:blueviolet;
+}
+div { /* style all div and elements withing them */
+    background-color: cornflowerblue;
+    color: yellow;
+}
+#sectionDiv { /* style all elements named id="sectionDiv" */
+    color: black;
+}
+#secondLine { /* style the element id="secondLine" */
+    background-color: deeppink;
+}
+span { /* style all span elements */
+    color: orange;
+    font-weight: bold;
+}
+.student { /* style all elements with class="student" */
+color:chocolate;
+font-style: italic;
+border-style :solid;
+border-radius: 5px;
+height: 30px;
+}
+.admin { /* style all elements with class="admin" */
+ color: purple;
+ width: 50px;     /* Set the width of element  */
+ height: 30px;   /* set the height of element */
+ border-style:solid;
+ border-color:blueviolet;
+ border-width: 3px;
+ border-collapse:collapse; 
+}
+
+ol { /* style all ol elements in the html */
+    list-style:square; /* specify identifiers for items in the list */
+    list-style:;
+}
+
+
+footer { /* Style all footer elements */
+    margin-top: 50px; /* space down 50px */
+    color: plum;
+}
+
+table { /* style all table elements */
+    border-collapse: collapse; 
+    border: 1px solid green;
+    }
+
+th, td { /* style all th and td elements */
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    }
