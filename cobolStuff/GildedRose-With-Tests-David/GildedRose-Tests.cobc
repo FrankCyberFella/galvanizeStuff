@@ -1,0 +1,251 @@
+       identification division.
+       program-id. GildedRose-Tests.
+      
+
+       environment division.
+       configuration section.
+       
+       data division.
+       working-storage section.
+       
+       01  Test-Entry-Point pic X(255) value 'update-quality'.
+       01  Prior-Quality pic s9(2).
+       01  Prior-Sell-In pic s9(2).
+       01  item.
+               05 sell-in pic s9(2).
+               05 quality pic s9(2).
+               05 item-name pic x(50).
+               
+      *>***************************************************************
+      *>Copybook with Fields required/used by Test Suite Template
+      *>Fields will be set by GUnit and used however the programmer
+      *>deems necessary for thier test processing 
+    *>***************************************************************> 
+        copy 'lib/TSFields.cpy'.
+        
+        *>**************************************************************
+      *>Copybook with Fields required/used by GUnit
+      *>Fields will be set by the caller and returned by GUnit 
+    *>***************************************************************
+       copy 'lib/GUnitFld.cpy'.
+     
+       
+       procedure division.
+       
+           Perform Run-Tests thru Run-Tests-Exit.       *> Perform all tests in test suite
+           Perform TS-Show-Results. *> Display results
+
+           goback.
+       
+       Run-Tests.
+
+      *>*************************************************************** 
+      *> Tests-Start.
+      *>*************************************************************** 
+       
+       Test-Normal-Item-1.
+
+           move "Normal item's sell-in reduces by one each update" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Elixir of the Mongoose' to item-name.
+           move 4 to sell-in.
+           move 6 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move sell-in to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 3.
+           perform GU-Assert-Numeric-Equal.
+           
+       Test-Normal-Item-2.
+
+           move "Normal item's quality reduces by one each update" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Elixir of the Mongoose' to item-name.
+           move 4 to sell-in.
+           move 6 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 5.
+           perform GU-Assert-Numeric-Equal.
+           
+    Test-Normal-Item-3.
+
+           move "Normal item's quality reduces by two each update with sell in zero" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Elixir of the Mongoose' to item-name.
+           move 0 to sell-in.
+           move 6 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 4.
+           perform GU-Assert-Numeric-Equal.
+
+    Test-Normal-Item-4.
+
+           move "Normal item's quality reduces by one each update with sell in one" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Elixir of the Mongoose' to item-name.
+           move 1 to sell-in.
+           move 6 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 5.
+           perform GU-Assert-Numeric-Equal.        
+    Test-Normal-Item-5.
+
+           move "Normal item's quality never be negative each update with sell in one" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Elixir of the Mongoose' to item-name.
+           move 1 to sell-in.
+           move 0 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 0.
+           perform GU-Assert-Numeric-Equal.       
+    Test-Normal-Item-6.
+
+           move "Normal item's quality reduces by one each update with sell in zero" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Elixir of the Mongoose' to item-name.
+           move 0 to sell-in.
+           move 0 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 0.
+           perform GU-Assert-Numeric-Equal.      
+           
+    Test-Conjured-Item-1.
+
+           move "Conjured item's quality decrease by 2 each update" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Conjured' to item-name.
+           move 10 to sell-in.
+           move 10 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 8.
+           perform GU-Assert-Numeric-Equal.    
+           
+    Test-Conjured-Item-2.
+
+           move "Conjured item's quality decrease by 4 each update when sellIn is zero" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Conjured' to item-name.
+           move 0 to sell-in.
+           move 10 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 6.
+           perform GU-Assert-Numeric-Equal.      
+    Test-Conjured-Item-3.
+
+           move "Conjured item's quality decrease by 2 each update when sellIn is 1" 
+               to TS-Test-Description.
+
+           *> Arrange
+           perform GU-Initialize-Default-Values.
+           move 'Conjured' to item-name.
+           move 1 to sell-in.
+           move 10 to quality.
+           move sell-in to Prior-Sell-In.
+           
+           *> Act
+           call Test-Entry-Point using item.
+
+           *> Assert
+           move quality to GU-Actual-Value-Numeric.
+           compute GU-Expected-Value-Numeric = 8.
+           perform GU-Assert-Numeric-Equal.  
+      *>*************************************************************** 
+      *> Tests-End.
+      *>*************************************************************** 
+      
+
+           
+
+       Run-Tests-Exit.
+           exit.
+
+
+    *>******************************************************************
+      *> COPY Test Suite Features Desired/Used before end of program
+    *>*****************************************************************
+       copy 'lib/TSGUAEQN.cpy'. *> Assert Equals Numeric
+       copy 'lib/TSGUANEN.cpy'. *> Assert NotEquals Numeric
+       copy 'lib/TSGUAEQS.cpy'. *> Assert Equals String
+       copy 'lib/TSGUANES.cpy'. *> Assert Not Equals String
+       copy 'lib/TSShow.cpy'.   *> Test Suit Display Results
+       copy 'lib/GUInit.cpy'.   *> GUnit Initialize to Defaults
+
+       end program GildedRose-Tests.
+
+    *>*****************************************************************
+      *> COPY program code to be tested AFTER end of Test Suite Program
+    *>*****************************************************************>      
+       copy 'lib/GUnitV3.cbl'.   *> GUnit Code
+       
+
+        

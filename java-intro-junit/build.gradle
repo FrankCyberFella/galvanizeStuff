@@ -1,0 +1,194 @@
+group 'galvanize.com'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.2'
+    }
+}
+
+apply plugin: "org.junit.platform.gradle.plugin"
+apply plugin: 'java'
+apply plugin: "jacoco"
+apply plugin: "java-library"
+apply plugin: "maven-publish"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+sourceSets {
+    assessment {
+        java.srcDir file('assessment/java')
+        resources.srcDir file('assessment/resources')
+    }
+}
+
+task assess(type: JavaExec) {
+    dependsOn sourceSets.assessment.output.classesDirs
+    classpath = sourceSets.assessment.runtimeClasspath
+
+    main = 'org.junit.platform.console.ConsoleLauncher'
+    args = ['--scan-class-path',
+            sourceSets.assessment.output.getClassesDirs().asPath,
+            '--reports-dir', "${buildDir}/test-results/junit-assessment"]
+}
+
+jar {
+    baseName = '01-java-testable-project'
+    version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+
+    testCompile 'org.apiguardian:apiguardian-api:1.0.0',
+                'org.junit.jupiter:junit-jupiter-params:5.10.2',
+                'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+
+    assessmentCompile group: 'com.google.guava', name: 'guava', version: '23.6-jre'
+    assessmentCompile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+    assessmentCompile 'org.junit.platform:junit-platform-console:1.0.0'
+    assessmentCompile sourceSets.main.output
+    assessmentCompile sourceSets.test.output
+    assessmentCompile configurations.testCompile
+    assessmentRuntime configurations.testRuntime
+}
+
+test {
+    jacoco {
+        destinationFile file("$buildDir/jacoco/junitPlatformTest.exec")
+    }
+}
+
+jacoco {
+    applyTo junitPlatformTest
+}
+
+jacocoTestReport {
+    executionData junitPlatformTest
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.9
+            }
+        }
+    }
+}
+
+junitPlatformTest.finalizedBy jacocoTestReport
+assess.finalizedBy test
+test.finalizedBy jacocoTestReport
+jacocoTestReport.finalizedBy jacocoTestCoverageVerification
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            pom {
+                withXml {
+                    def propertiesNode = asNode().appendNode('properties')
+                    propertiesNode.appendNode('maven.compiler.version', '3.8.1')
+                    propertiesNode.appendNode('maven.surefire.version', '3.2.5')
+
+                    def dependenciesNode = asNode().dependencies[0]
+                    if (!dependenciesNode) {
+                        dependenciesNode = asNode().appendNode('dependencies')
+                    }
+
+                    configurations.testImplementation.allDependencies.each {
+                        def testDependency = it
+                        if (!configurations.implementation.allDependencies.any { it.group == testDependency.group && it.name == testDependency.name }) {
+                            System.out.println(String.format("%s - %s - %s", it.group, it.name, it.version))
+                            def dependencyNode = dependenciesNode.appendNode('dependency')
+                            dependencyNode.appendNode('groupId', it.group)
+                            dependencyNode.appendNode('artifactId', it.name)
+                            dependencyNode.appendNode('version', it.version)
+                            dependencyNode.appendNode('scope', 'test')
+                        }
+                    }
+                    // Add main class to the JAR manifest
+                    def buildNode = asNode().appendNode('build')
+                    def pluginsNode = buildNode.appendNode('plugins')
+                    // Maven Compiler Plugin
+                    def mavenCompilerPlugin = pluginsNode.appendNode('plugin')
+                    mavenCompilerPlugin.appendNode('groupId', 'org.apache.maven.plugins')
+                    mavenCompilerPlugin.appendNode('artifactId', 'maven-compiler-plugin')
+                    mavenCompilerPlugin.appendNode('version', '${maven.compiler.version}')
+                    def mavenCompilerConfiguration = mavenCompilerPlugin.appendNode('configuration')
+                    mavenCompilerConfiguration.appendNode('source', sourceCompatibility.toString())
+                    mavenCompilerConfiguration.appendNode('target', targetCompatibility.toString())
+
+                    // Maven Surefire Plugin
+                    def mavenSurefirePluginNode = pluginsNode.appendNode('plugin')
+                    mavenSurefirePluginNode.appendNode('groupId', 'org.apache.maven.plugins')
+                    mavenSurefirePluginNode.appendNode('artifactId', 'maven-surefire-plugin')
+                    mavenSurefirePluginNode.appendNode('version', '${maven.surefire.version}')
+
+                    // Maven Dependency Plugin
+                    def mavenDependencyPluginNode = pluginsNode.appendNode('plugin')
+                    mavenDependencyPluginNode.appendNode('groupId', 'org.apache.maven.plugins')
+                    mavenDependencyPluginNode.appendNode('artifactId', 'maven-dependency-plugin')
+                    mavenDependencyPluginNode.appendNode('version', '3.6.1')
+                    def mavenConfigurationNode = mavenDependencyPluginNode.appendNode('configuration')
+                    mavenConfigurationNode.appendNode('outputDirectory', '${project.build.directory}/lib')
+                    mavenConfigurationNode.appendNode('excludeTransitive',false)
+                    mavenConfigurationNode.appendNode('stripVersion',false)
+                    def executionsNode = mavenDependencyPluginNode.appendNode('executions')
+                    def executionNode = executionsNode.appendNode('execution')
+                    executionNode.appendNode('id', 'copy-dependencies')
+                    executionNode.appendNode('phase', 'package')
+                    def goalsNode = executionNode.appendNode('goals')
+                    goalsNode.appendNode('goal', 'copy-dependencies')
+
+//                    // Maven Jar Plugin
+//                    def pluginNode = pluginsNode.appendNode('plugin')
+//                    pluginNode.appendNode('groupId', 'org.apache.maven.plugins')
+//                    pluginNode.appendNode('artifactId', 'maven-jar-plugin')
+//                    pluginNode.appendNode('version', '3.2.0')
+//                    def configurationNode = pluginNode.appendNode('configuration')
+//                    def archiveNode = configurationNode.appendNode('archive')
+//                    def manifestNode = archiveNode.appendNode('manifest')
+//                    manifestNode.appendNode('mainClass', mainClassName)
+//                    manifestNode.appendNode('addClasspath',true)
+//                    manifestNode.appendNode('classpathPrefix','lib/')
+                }
+            }
+
+        }
+    }
+}
+
+task savePomToFile(type: Copy) {
+    def pomFile = "${project.buildDir}/publications/mavenJava/pom-default.xml" // Path to the generated pom.xml file
+
+    // Define the output directory where the pom file will be saved
+    def outputDir = "${project.rootDir}"
+
+    // Ensure the output directory exists, create it if not
+    outputs.dir(outputDir)
+
+    // Copy the pom file to the output directory
+    from pomFile
+    into outputDir
+
+    // Rename the pom file if needed
+    rename { String fileName ->
+        "pom.xml"
+    }
+}
+
+savePomToFile.dependsOn(generatePomFileForMavenJavaPublication)
+// Add a dependency to ensure that the 'savePomToFile' task runs after the 'publishToMavenLocal' task
+publishToMavenLocal.dependsOn(savePomToFile)

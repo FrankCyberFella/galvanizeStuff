@@ -1,0 +1,10 @@
+.gradle/
+build/
+out/
+target/
+.mvn/wrapper/*.jar
+
+.idea/
+*.iml
+
+.DS_Store
