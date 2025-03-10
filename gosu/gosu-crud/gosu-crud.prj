@@ -1,0 +1,40 @@
+{
+  "Title": "Gosu Experiment",
+  "Version": 2,
+  "Name": "gosu-crud",
+  "ActiveTab": "src/main/gosu/scratch/RunMe.gsp",
+  "Tabs": [
+    "src/main/gosu/scratch/RunMe.gsp"
+  ],
+  "SourcePath": [
+    "src/main/gosu"
+  ],
+  "BackingSource": [  ],
+  "RunConfigs": [
+    {
+      "$construct_type": "editor.run.ProgramRunConfig",
+      "_params": {
+        "$construct_type": "editor.run.ProgramRunConfigParameters",
+        "_name": "RunMe",
+        "_fqn": "scratch.RunMe",
+        "_vmArgs": null,
+        "_progArgs": null,
+        "_workingDir": null,
+        "_jre": null,
+        "_bJre": 0
+      }
+    }
+  ],
+  "MruRunConfig": "RunMe",
+  "Settings": [
+    {
+      "$construct_type": "editor.settings.CompilerSettings",
+      "_params": {
+        "$construct_type": "editor.settings.CompilerSettingsParameters",
+        "_sourceBased": 1,
+        "_ouputPath": "classes"
+      }
+    }
+  ],
+  "MruSettings": null
+}
