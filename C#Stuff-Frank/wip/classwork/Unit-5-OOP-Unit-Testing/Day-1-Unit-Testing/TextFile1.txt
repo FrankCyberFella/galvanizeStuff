@@ -1,3 +1,0 @@
-	<PropertyGroup>
-		<LangVersion>10.0</LangVersion>
-	</PropertyGroup>

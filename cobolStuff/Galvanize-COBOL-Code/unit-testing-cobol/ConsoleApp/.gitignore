@@ -1,4 +1,0 @@
-*.dylib
-build/*
-!build/.gitkeep
-.DS_Store
